@@ -3,6 +3,7 @@ package kr.dantae.rest.store.logic;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -43,7 +44,7 @@ public class UserStoreLogic implements UserStore {
 
 	@Override
 	public List<User> retrieveAll() {
-		this.userMap.values().stream().collect(Collectors.toList());
+		return this.userMap.values().stream().collect(Collectors.toList());
 	}
 
 }
